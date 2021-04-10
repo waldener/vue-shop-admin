@@ -1,23 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-// import Login from '../components/Login.vue'
-// import Home from '../components/Home.vue'
-// import Welcome from '../components/Welcome.vue'
-
-// import Users from '../components/user/User.vue'
-// import Rights from '../components/power/Rights.vue'
-// import Roles from '../components/power/Roles.vue'
-
-// import Cate from '../components/goods/Cate.vue'
-// import Params from '../components/goods/Params.vue'
-
-// import GoodsList from '../components/goods/List.vue'
-// import Add from '../components/goods/Add.vue'
-
-// import Order from '../components/order/Order.vue'
-// import Report from '../components/report/Report.vue'
-
 // 路由懒加载
 const Login = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../components/Login.vue')
 const Home = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../components/Home.vue')
@@ -60,9 +43,10 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: "history",
+  base: process.env.BASE_URL
 })
-
 // 挂载路由导航守卫,to表示将要访问的路径，from表示从哪里来，next是下一个要做的操作 next('/login')强制跳转login
 router.beforeEach((to, from, next) => {
   // 访问登录页，放行
