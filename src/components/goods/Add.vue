@@ -38,7 +38,7 @@
             <el-form-item label="商品名称" prop="goods_name">
               <el-input v-model="addForm.goods_name"></el-input>
             </el-form-item>
-            <el-form-item label="商品价格" prop="goods_price">
+            <el-form-item label="商品价格" prop="price">
               <el-input v-model="addForm.goods_price" type="number"></el-input>
             </el-form-item>
             <el-form-item label="商品重量" prop="goods_weight">
@@ -281,7 +281,6 @@ export default {
           this.addForm.attrs.push(newInfo)
         })
         form.attrs = this.addForm.attrs
-        console.log(form);
         // 发起请求添加商品
         // 商品名称必须是唯一的
         const { data: res } = await this.$http.post('goods', form)

@@ -1,14 +1,15 @@
 <template>
   <div id="app">
-    <keep-alive>
-      <router-view />
-    </keep-alive>
+    <!-- 路由占位符 -->
+    <router-view></router-view>
   </div>
 </template>
 
-<style>
-@import "assets/css/base.css";
-#app{
-  height: 100vh;
+<script>
+export default {
+  name: 'app'
 }
+</script>
+
+<style>
 </style>

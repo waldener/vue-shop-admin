@@ -8,20 +8,20 @@
       <!-- 登录表单 -->
       <div>
         <el-form
-            ref="loginFormRef"
-            :model="loginForm"
-            :rules="loginFormRules"
-            label-width="60px"
-            class="login_form"
+          ref="loginFormRef"
+          :model="loginForm"
+          :rules="loginFormRules"
+          label-width="60px"
+          class="login_form"
         >
           <el-form-item label="账号" prop="username">
             <el-input v-model="loginForm.username" prefix-icon="iconfont icon-user"></el-input>
           </el-form-item>
           <el-form-item label="密码" prop="password">
             <el-input
-                v-model="loginForm.password"
-                type="password"
-                prefix-icon="iconfont icon-3702mima"
+              v-model="loginForm.password"
+              type="password"
+              prefix-icon="iconfont icon-3702mima"
             ></el-input>
           </el-form-item>
           <el-form-item class="btns">
