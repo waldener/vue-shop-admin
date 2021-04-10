@@ -55,7 +55,7 @@
         title="修改分类信息"
         :visible.sync="editCateDialogVisible"
         width="50%" @close="editCateDialogClosed">
-      <el-form :model="editCateForm" :rules="addCateFormRules" ref="editCateFormRef" label-width="70px" @close="editCateDialogClosed">
+      <el-form :model="editCateForm" :rules="addCateFormRules" ref="editCateFormRef" label-width="70px">
         <el-form-item label="分类名" prop="cat_name">
           <el-input v-model="editCateForm.cat_name"></el-input>
         </el-form-item>
@@ -165,7 +165,7 @@ export default {
       }
     },
     addCateDialogClosed(){
-      this.$refs.addCateFormRef.restFields()
+      this.$refs.addCateFormRef.resetFields()
       this.selectedKeys = []
       this.addCateForm.cat_level = 0
       this.addCateForm.cat_pid = 0
