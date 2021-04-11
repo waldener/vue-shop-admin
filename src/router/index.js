@@ -19,11 +19,14 @@ const Add = () => import(/* webpackChunkName: "GoodsList_Add" */ '../components/
 const Order = () => import(/* webpackChunkName: "Order_Report" */ '../components/order/Order.vue')
 const Report = () => import(/* webpackChunkName: "Order_Report" */ '../components/report/Report.vue')
 
+const Error = () => import(/* webpackChunkName: "Error" */ '../components/Error404')
+
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/', redirect: '/login' },
   { path: '/login', component: Login },
+  { path: '*', component: Error},
   { path: '/home',
     component: Home,
     redirect: '/Welcome',
